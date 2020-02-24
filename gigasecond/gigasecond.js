@@ -9,5 +9,3 @@ export const gigasecond = (date) => {
 
 const GIGASECOND = 1000000000;
 const MILISECONDS = 1000;
-
-xx
