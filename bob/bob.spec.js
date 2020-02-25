@@ -6,122 +6,130 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('shouting', () => {
+  test('shouting', () => {
     const result = hey('WATCH OUT!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('shouting gibberish', () => {
+  test('shouting gibberish', () => {
     const result = hey('FCECDFCAAB');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('asking a question', () => {
+  test('asking a question', () => {
     const result = hey('Does this cryogenic chamber make me look fat?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('asking a numeric question', () => {
+  test('asking a numeric question', () => {
     const result = hey('You are, what, like 15?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('asking gibberish', () => {
+  test('asking gibberish', () => {
     const result = hey('fffbbcbeab?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('talking forcefully', () => {
+  test('talking forcefully', () => {
     const result = hey("Let's go make out behind the gym!");
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('using acronyms in regular speech', () => {
+  test('using acronyms in regular speech', () => {
     const result = hey("It's OK if you don't want to go to the DMV.");
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('forceful question', () => {
+  test('forceful question', () => {
     const result = hey('WHAT THE HELL WERE YOU THINKING?');
     expect(result).toEqual('Calm down, I know what I\'m doing!');
   });
 
-  xtest('shouting numbers', () => {
+  test('shouting numbers', () => {
     const result = hey('1, 2, 3 GO!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
+  //Al ser numero no funciona el toUpperCase, revisar este caso
   xtest('only numbers', () => {
     const result = hey('1, 2, 3');
     expect(result).toEqual('Whatever.');
   });
 
+  //Al ser numero no funciona el toUpperCase, revisar este caso
   xtest('question with only numbers', () => {
     const result = hey('4?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('shouting with special characters', () => {
+  test('shouting with special characters', () => {
     const result = hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('shouting with no exclamation mark', () => {
+  test('shouting with no exclamation mark', () => {
     const result = hey('I HATE YOU');
     expect(result).toEqual('Whoa, chill out!');
   });
 
+  //No sé por qué retorna true a "message.lastIndexOf('?')!= -1" si no termina con signo de interrogación
   xtest('statement containing question mark', () => {
     const result = hey('Ending with a ? means a question.');
     expect(result).toEqual('Whatever.');
   });
 
+  //Al ser numero no funciona el toUpperCase, revisar este caso
   xtest('non-letters with question', () => {
     const result = hey(':) ?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('prattling on', () => {
+  test('prattling on', () => {
     const result = hey('Wait! Hang on. Are you going to be OK?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('silence', () => {
+  test('silence', () => {
     const result = hey('');
     expect(result).toEqual('Fine. Be that way!');
   });
 
+//necesito agregar un incluedes creo que con un for para verificar si tiene letras o números
   xtest('prolonged silence', () => {
     const result = hey('          ');
     expect(result).toEqual('Fine. Be that way!');
   });
 
+  //Misma cuestión de las mayusculas, corroborar que tengan letras
   xtest('alternate silence', () => {
     const result = hey('\t\t\t\t\t\t\t\t\t\t');
     expect(result).toEqual('Fine. Be that way!');
   });
 
+//me está retornando que si tiene un signo de ? en el last index, revisar por qué
   xtest('multiple line question', () => {
     const result = hey('\nDoes this cryogenic chamber make me look fat?\nno');
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('starting with whitespace', () => {
+  test('starting with whitespace', () => {
     const result = hey('         hmmmmmmm...');
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('ending with whitespace', () => {
+  test('ending with whitespace', () => {
     const result = hey('Okay if like my  spacebar  quite a bit?   ');
     expect(result).toEqual('Sure.');
   });
 
+  //Misma cuestion de confirmar si hay letras o números
   xtest('other whitespace', () => {
     const result = hey('\n\r \t');
     expect(result).toEqual('Fine. Be that way!');
   });
 
-  xtest('non-question ending with whitespace', () => {
+  test('non-question ending with whitespace', () => {
     const result = hey('This is a statement ending with whitespace      ');
     expect(result).toEqual('Whatever.');
   });
