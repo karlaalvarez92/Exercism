@@ -4,15 +4,32 @@
 //
 
 export class Matrix {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(arrayOfValues) {
+    this.row = [];
+
+    arrayOfValues.split("\n").map(string => {
+      this.row.push(
+        string.split(" ").map(e => {
+          return parseInt(e);
+        })
+      );
+    });
+    
+    let arrayOfColumns = new Array(this.row[0].length).fill(null).map(e => new Array())
+    this.row.map((row) => {
+      row.map((el, j) => {
+        return arrayOfColumns[j].push(el);
+      });
+    });
+
+    this.column = arrayOfColumns;
   }
 
   get rows() {
-    throw new Error("Remove this statement and implement this function");
+    return this.row;
   }
 
   get columns() {
-    throw new Error("Remove this statement and implement this function");
+    return this.column;
   }
 }
