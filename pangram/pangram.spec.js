@@ -5,7 +5,7 @@ describe('Pangram()', () => {
     expect(isPangram('')).toBe(false);
   });
 
-  xtest('perfect lower case', () => {
+  test('perfect lower case', () => {
     expect(isPangram('abcdefghijklmnopqrstuvwxyz')).toBe(true);
   });
 
@@ -13,7 +13,7 @@ describe('Pangram()', () => {
     expect(isPangram('the quick brown fox jumps over the lazy dog')).toBe(true);
   });
 
-  xtest("missing the letter 'x'", () => {
+  test("missing the letter 'x'", () => {
     expect(isPangram('a quick movement of the enemy will jeopardize five gunboats')).toBe(false);
   });
 
