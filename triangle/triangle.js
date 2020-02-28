@@ -1,8 +1,3 @@
-//
-// This is only a SKELETON file for the 'Triangle' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Triangle {
   constructor(a, b, c) {
     this.sideA = a;
@@ -10,45 +5,43 @@ export class Triangle {
     this.sideC = c;
   }
 
+  isInequality() {
+    return (
+      this.sideA + this.sideB < this.sideC ||
+      this.sideA + this.sideC < this.sideB ||
+      this.sideB + this.sideC < this.sideA
+    );
+  }
+
   isEquilateral() {
     if (this.sideA !== 0 || this.sideB !== 0 || this.sideC !== 0) {
-      return this.sideA === this.sideB && this.sideA === this.sideC
-        ? true
-        : false;
+      return this.sideA === this.sideB && this.sideA === this.sideC;
     } else {
       return false;
     }
   }
 
   isIsosceles() {
-    if (
-      this.sideA + this.sideB < this.sideC ||
-      this.sideA + this.sideC < this.sideB ||
-      this.sideB + this.sideC < this.sideA
-    ) {
+    if(this.isInequality()){
       return false;
     } else {
-      return this.sideA === this.sideB ||
+      return (
+        this.sideA === this.sideB ||
         this.sideA === this.sideC ||
         this.sideB === this.sideC
-        ? true
-        : false;
+      );
     }
   }
 
   isScalene() {
-    if (
-      this.sideA + this.sideB < this.sideC ||
-      this.sideA + this.sideC < this.sideB ||
-      this.sideB + this.sideC < this.sideA
-    ) {
+    if(this.isInequality()){
       return false;
     } else {
-    return this.sideA !== this.sideB &&
-      this.sideA !== this.sideC &&
-      this.sideB !== this.sideC
-      ? true
-      : false;
+      return (
+        this.sideA !== this.sideB &&
+        this.sideA !== this.sideC &&
+        this.sideB !== this.sideC
+      );
+    }
   }
-}
 }
