@@ -34,6 +34,7 @@ return diferences;
       }
     }
     return diferences
+    
   }
   
 };

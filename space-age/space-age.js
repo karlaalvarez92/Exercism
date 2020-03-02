@@ -3,8 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export const age = (planet, ageOnSeconds) => {
- return (ageOnSeconds/(YEAR_IN_SECONDS*(PLANETS[planet])))
+export const age = (planet, ageInSeconds) => {
+ return (ageInSeconds/(YEAR_IN_SECONDS*(PLANETS[planet])).toFixed(2))
 };
 
 const YEAR_IN_SECONDS= 31557600
@@ -19,3 +19,9 @@ saturn: 29.447498,
 uranus: 84.016846,
 neptune: 164.79132 
 }
+
+// return Number(
+//   convertToSeconds(planet, seconds).toFixed(2)
+// );
+
+// const convertToSeconds= (planet, seconds)

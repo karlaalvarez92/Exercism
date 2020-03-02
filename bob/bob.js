@@ -16,8 +16,6 @@ export const hey = message => {
     return "Whoa, chill out!";
   }else if(message.lastIndexOf('?')!= -1){
     return "Sure."
-  }else if(message.toUpperCase() == message && message.lastIndexOf('?')){
-    return 'Calm down, I know what I\'m doing!'
   } else {
     return "Whatever.";
   }
