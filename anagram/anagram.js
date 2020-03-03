@@ -5,13 +5,23 @@ export const findAnagrams = (word, array) => {
   sortedWord= word.toUpperCase().split("").sort().join(""),
   sortedArray= [],
   indexMatch=[],
-  arrayWithMatches=[];
+  arrayWithMatches=[],
+
+  arrayWithoutSameWords=()=>{for(let i = 0; i< array.length; i++){
+  if(word.toUpperCase() == array[i].toUpperCase()){
+    array.splice(array[i]);
+  }
+  console.log(array)
+  return array;
+}
+  }
+  arrayWithoutSameWords(word, array);
 
   for(let i=0; i< array.length; i++){
     sortedArray.push(array[i].toUpperCase().split("").sort().join("")); 
   }
 
-  for(let i=0; i< sortedArray.length; i++){
+  for(let i=0; i<= sortedArray.length; i++){
     if(sortedArray[i] == sortedWord){
       indexMatch.push(i)
     }
