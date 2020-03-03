@@ -10,10 +10,10 @@ export const classify = (number) => {
  DeficentNumber= 'deficient',
  NoNaturalNumber= 'Classification is only possible for natural numbers.',
  
- isNaturalNumber=() => number > 0,
- isPerfectNumber=()=> sumOfFactors == number,
- isAbundantNumber=()=> sumOfFactors > number,
- isDeficentNumber=()=> sumOfFactors < number;
+ isNaturalNumber=(number) => number > 0,
+ isPerfectNumber=(sumOfFactors, number)=> sumOfFactors == number,
+ isAbundantNumber=(sumOfFactors, number)=> sumOfFactors > number,
+ isDeficentNumber=(sumOfFactors, number)=> sumOfFactors < number;
 
  let sumOfFactors=0;
 
