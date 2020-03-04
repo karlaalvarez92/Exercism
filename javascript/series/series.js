@@ -1,3 +1,4 @@
+//Para qué es este import???
 import { threadId } from "worker_threads";
 
 export class Series {
