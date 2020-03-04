@@ -1,8 +1,17 @@
-//
-// This is only a SKELETON file for the 'Matching Brackets' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const isPaired = string => {
+  string = string.replace(/[^{}\(\)\]\[]/g, "");
+  console.log(string);
+  if (string.length % 2 !== 0) return false;
 
-export const isPaired = () => {
-  throw new Error("Remove this statement and implement this function");
+  while (
+    string.includes("{}") ||
+    string.includes("[]") ||
+    string.includes("()")
+  ) {
+    string = string
+      .replace("{}", "")
+      .replace("[]", "")
+      .replace("()", "");
+  }
+  return string === "";
 };
