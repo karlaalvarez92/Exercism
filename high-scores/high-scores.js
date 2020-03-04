@@ -1,9 +1,6 @@
 export class HighScores {
   constructor(scores) {
     this.scoresGame = scores;
-    /* this.sortedScores = this.scoresGame.sort((a, b) => {
-      return b - a;
-    }); */
   }
 
   get scores() {
