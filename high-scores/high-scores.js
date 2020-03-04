@@ -1,26 +1,30 @@
-//
-// This is only a SKELETON file for the 'High-Scores' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class HighScores {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(scores) {
+    this.scoresGame = scores;
+    /* this.sortedScores = this.scoresGame.sort((a, b) => {
+      return b - a;
+    }); */
   }
 
   get scores() {
-    throw new Error("Remove this statement and implement this function");
+    return this.scoresGame;
   }
 
   get latest() {
-    throw new Error("Remove this statement and implement this function");
+    return this.scoresGame[this.scoresGame.length - 1];
   }
 
   get personalBest() {
-    throw new Error("Remove this statement and implement this function");
+    let sortedScores = this.scoresGame.sort((a, b) => {
+      return b - a;
+    });
+    return sortedScores[0];
   }
 
   get personalTopThree() {
-    throw new Error("Remove this statement and implement this function");
+    let sortedScores = this.scoresGame.sort((a, b) => {
+      return b - a;
+    });
+    return sortedScores.slice(0, 3);
   }
 }
