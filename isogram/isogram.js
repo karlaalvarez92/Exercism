@@ -1,8 +1,12 @@
-//
-// This is only a SKELETON file for the 'Isogram' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const isIsogram = string => {
+  string = string.toLowerCase().replace(/[^A-Z0-9']+/gi, "");
 
-export const isIsogram = () => {
-  throw new Error("Remove this statement and implement this function");
+  for (let i = 0; i < string.length; ++i) {
+    for (let j = i + 1; j < string.length; ++j) {
+      if (string[i] === string[j]) {
+        return false;
+      }
+    }
+  }
+  return true;
 };
