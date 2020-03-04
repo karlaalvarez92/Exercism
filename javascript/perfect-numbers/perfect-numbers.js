@@ -29,7 +29,3 @@ if(isAbundantNumber(sumOfFactors, number)){return AbundantNumber}
 if(isDeficentNumber(sumOfFactors, number)){return DeficentNumber}
 
 };
-
-/* if(sumOfFactors ==number){return PerfectNumber}
-if(sumOfFactors < number){return DeficentNumber}
-if(sumOfFactors > number){return AbundantNumber} */
