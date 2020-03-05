@@ -1,6 +1,3 @@
-//Para qué es este import???
-import { threadId } from "worker_threads";
-
 export class Series {
   constructor(string) {
     this.numbersArray = string.split("").map(element => Number(element));
