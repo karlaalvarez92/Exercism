@@ -21,22 +21,19 @@ export class Character {
     this._charisma = Character.rollAbility();
   }
 
-  //Un método static
+  //Un método static se utiliza cuando sólo ???? no necesita
   //Escriba un generador de caracteres aleatorios que siga las reglas anteriores.
   static rollAbility() {
     //Revisar como ponerlo en métodos más legibles, preguntar por qué no pude
     //mandar llamar más métodos después del map.
-    let _rollAbility = Array(4);
-    _rollAbility
+    let _rollAbility = Array(4)
       .fill("")
-      .map(e => _rollAbility.push(Math.floor(Math.random() * 6 + 1)));
-
-    let abilityValue = _rollAbility
+      .map(e => Math.floor(Math.random() * 6 + 1))
       .sort((a, b) => b - a)
-      .slice(0, 3)
+      .slice(1)
       .reduce((a, b) => (a += b));
 
-    return abilityValue;
+    return _rollAbility;
   }
 
   get strength() {
