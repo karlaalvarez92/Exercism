@@ -24,16 +24,12 @@ export class Character {
   //Un método static se utiliza cuando sólo ???? no necesita
   //Escriba un generador de caracteres aleatorios que siga las reglas anteriores.
   static rollAbility() {
-    //Revisar como ponerlo en métodos más legibles, preguntar por qué no pude
-    //mandar llamar más métodos después del map.
-    let _rollAbility = Array(4)
+    return Array(4)
       .fill("")
       .map(e => Math.floor(Math.random() * 6 + 1))
       .sort((a, b) => b - a)
       .slice(1)
       .reduce((a, b) => (a += b));
-
-    return _rollAbility;
   }
 
   get strength() {
