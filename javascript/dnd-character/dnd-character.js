@@ -1,5 +1,5 @@
-//Encuentra el modificador de constitución de tu personaje restando 10 de
-//la constitución de tu personaje, divide entre 2 y redondea hacia abajo.
+/*Encuentra el modificador de constitución de tu personaje restando 10 de
+la constitución de tu personaje, divide entre 2 y redondea hacia abajo.*/
 export const abilityModifier = modifier => {
   if (modifier < 3) {
     throw new Error("Ability scores must be at least 3");
@@ -10,64 +10,61 @@ export const abilityModifier = modifier => {
   return Math.floor((modifier - 10) / 2);
 };
 
-//Escriba un generador de caracteres aleatorios que siga las reglas anteriores.
 export class Character {
+  //En el constructor debería poner todo lo que va a necesitar mi clase
   constructor() {
     this._constitution = Character.rollAbility();
     this._strength = Character.rollAbility();
+    this._dexterity = Character.rollAbility();
+    this._intelligence = Character.rollAbility();
+    this._wisdom = Character.rollAbility();
+    this._charisma = Character.rollAbility();
   }
+
+  //Un método static
+  //Escriba un generador de caracteres aleatorios que siga las reglas anteriores.
   static rollAbility() {
-    //Genera un número random del 1-6 simula tirar un dado
-    let randomCharacter = () => Math.floor(Math.random() * 6 + 1);
-    //Array dónde se guardan los tiros de dado
+    //Revisar como ponerlo en métodos más legibles, preguntar por qué no pude
+    //mandar llamar más métodos después del map.
     let _rollAbility = Array(4);
-    _rollAbility.fill("").map(e => _rollAbility.push(randomCharacter()));
+    _rollAbility
+      .fill("")
+      .map(e => _rollAbility.push(Math.floor(Math.random() * 6 + 1)));
 
     let abilityValue = _rollAbility
       .sort((a, b) => b - a)
       .slice(0, 3)
       .reduce((a, b) => (a += b));
-    //console.log(keac);
+
     return abilityValue;
-    //console.log(randomCharacter);
-    //retorna habilidad
-    //return ability;
   }
 
   get strength() {
     return this._strength;
-    //throw new Error("Remove this statement and implement this function");
   }
 
   get dexterity() {
-    return Character.rollAbility();
-    //throw new Error("Remove this statement and implement this function");
+    return this._dexterity;
   }
 
   get constitution() {
     return this._constitution;
-    //throw new Error("Remove this statement and implement this function");
   }
 
   get intelligence() {
-    return Character.rollAbility();
-    //throw new Error("Remove this statement and implement this function");
+    return this._intelligence;
   }
 
   get wisdom() {
-    return Character.rollAbility();
-    //throw new Error("Remove this statement and implement this function");
+    return this._wisdom;
   }
 
   get charisma() {
     return Character.rollAbility();
-    //throw new Error("Remove this statement and implement this function");
   }
 
   get hitpoints() {
     let addition = 10;
-
     return addition + abilityModifier(this._constitution);
-    // throw new Error("Remove this statement and implement this function");
   }
 }
