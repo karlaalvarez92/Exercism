@@ -3,20 +3,20 @@
 // convenience to get you started writing code faster.
 
 export const commands = number => {
-  let binary = number.toString(2);
-  let array = [];
+  let binaryNumber = number.toString(2);
+  let binaryArray = binaryNumber.split("").reverse();
+  let keysArray = [];
   let actions = [];
-  let binaryArray = binary.split("").reverse();
 
   //Intenté hacerlo con map pero el elemento era "el mismo" y me retornaba un
   //indexOf incorrecto
   for (let i = 0; i < binaryArray.length; i++) {
     if (binaryArray[i] == 1) {
-      array.push(i);
+      keysArray.push(i);
     }
   }
 
-  array.map(el => {
+  keysArray.map(el => {
     if (el == 4) {
       actions.reverse();
     } else {
