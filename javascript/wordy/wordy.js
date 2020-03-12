@@ -22,13 +22,8 @@ export const answer = question => {
 
   if (
     question.match(/(\d\s\d)/g) ||
-    !question.match(
-      /-?\d+/g
-    ) /*||
-    //!clean.match(/(-?\d+\s)[\+\-\*\/]\s(-?\d+)/g)
-
-    //Al parecer este pedacito no es necesario||
-    clean == " "*/
+    !question.match(/-?\d+/g) ||
+    !clean.match(/(-?\d+\s)[\+\-\*\/]\s(-?\d+)/g)
   ) {
     throw new Error("Syntax error");
   }
@@ -46,6 +41,5 @@ export const answer = question => {
     .join(" ");
 
   console.log(question, clean);
-
   return eval(firstOperation + secondOperation);
 };
