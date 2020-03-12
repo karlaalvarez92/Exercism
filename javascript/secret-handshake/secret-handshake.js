@@ -1,34 +1,21 @@
-//
-// This is only a SKELETON file for the 'Secret Handshake' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-
 export const commands = number => {
-  let binaryNumber = number.toString(2);
-  let binaryArray = binaryNumber.split("").reverse();
-  let keysArray = [];
+  let binaryReverse = number
+    .toString(2)
+    .split("")
+    .reverse();
+
   let actions = [];
-
-  //Intenté hacerlo con map pero el elemento era "el mismo" y me retornaba un
-  //indexOf incorrecto
-  for (let i = 0; i < binaryArray.length; i++) {
-    if (binaryArray[i] == 1) {
-      keysArray.push(i);
-    }
-  }
-
-  keysArray.map(el => {
-    if (el == 4) {
-      actions.reverse();
-    } else {
-      actions.push(ACTIONS[el]);
+  binaryReverse.map((el, i) => {
+    console.log(el, i);
+    if (el == 1) {
+      if (i == 4) {
+        actions.reverse();
+      } else {
+        actions.push(ACTIONS[i]);
+      }
     }
   });
   return actions;
 };
 
-const ACTIONS = {
-  0: "wink",
-  1: "double blink",
-  2: "close your eyes",
-  3: "jump"
-};
+const ACTIONS = ["wink", "double blink", "close your eyes", "jump"];
