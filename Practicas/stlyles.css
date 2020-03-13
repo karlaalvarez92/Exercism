@@ -1,0 +1,160 @@
+* {
+  color: white;
+  font-family: adelle-sans, sans-serif;
+  font-style: normal;
+  font-weight: 550;
+}
+/* 1.- ¿Por qué si son las mismas propiedades no puedo dar un solo
+        nombre de clase? */
+.header_date {
+  display: block;
+  background: rgb(54, 53, 53);
+  text-align: center;
+  border: 0.5px solid rgb(34, 34, 34);
+}
+.header_title {
+  display: block;
+  background: black;
+  text-align: center;
+  border: 0.5px solid rgb(34, 34, 34);
+}
+
+.header_nav {
+  display: block;
+  background: black;
+  text-align: center;
+  /*¿Por qué a este elemento necesito especificarle altura?*/
+  height: 3rem;
+  border: 0.5px solid rgb(34, 34, 34);
+  font-size: 11px;
+}
+/* 1.- Primer comentario */
+
+/* 2.- ¿Por qué si son las mismas propiedades no puedo dar un solo            nombre de clase? */
+.date {
+  display: inline;
+}
+
+.title {
+  display: inline;
+}
+
+.nav {
+  display: inline;
+}
+/* 2.- Segundo comentario */
+
+.left {
+  position: absolute;
+  left: 20px;
+}
+.right {
+  position: absolute;
+  right: 20px;
+}
+
+/* ¿Por qué este elemento se ve por fuera de su padre? */
+/* ul {
+            text-align: center;
+          } */
+
+.horizontal {
+  display: inline;
+  padding: 1rem;
+  position: relative;
+  top: 1rem;
+}
+
+.container {
+  /* background: salmon; */
+  /*Este es otro que tuve que especificarle altura*/
+  height: 35rem;
+  padding: 0px;
+  background: black;
+  position: relative;
+  z-index: -10000000000;
+}
+
+article {
+  background: rgba(1, 1, 1, 0.3);
+  height: 31rem;
+}
+.mini {
+  display: block;
+  /* background: red; */
+  height: 15rem;
+  margin-bottom: 1rem;
+}
+
+.bigger {
+  width: 68%;
+}
+
+.smaller {
+  width: 28%;
+}
+
+.label {
+  background: orange;
+  position: relative;
+  top: 20rem;
+  right: -1.7rem;
+  display: inline;
+  font-weight: 500;
+  padding: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  font-size: 10px;
+  /* margin-right: 2rem; */
+}
+
+.label_mini {
+  background: orange;
+  position: relative;
+  top: 8rem;
+  right: -1.1rem;
+  display: inline;
+  font-weight: 500;
+  font-size: 10px;
+  padding: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+}
+
+/* 3.- ¿Por qué estos estilos ya no se están aplicando? */
+.social {
+  width: auto;
+}
+
+.vertical {
+  color: cornsilk;
+  list-style: none;
+}
+/* 3.- Tercer comentario */
+
+.img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.title_big {
+  /* position: absolute;
+  bottom: 1%;
+  left: 1%; */
+  margin-top: 22rem;
+  margin-right: 18%;
+  margin-left: 3%;
+  font-size: 2rem;
+}
+
+.title_mini {
+  margin-top: 9rem;
+  margin-left: 1rem;
+}
+
+.social_logo {
+  width: 25px;
+}
