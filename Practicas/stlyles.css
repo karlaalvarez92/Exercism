@@ -24,7 +24,7 @@
   background: black;
   text-align: center;
   /*¿Por qué a este elemento necesito especificarle altura?*/
-  height: 3rem;
+  height: 3.5rem;
   border: 0.5px solid rgb(34, 34, 34);
   font-size: 11px;
 }
@@ -60,7 +60,14 @@
 
 .horizontal {
   display: inline;
-  padding: 1rem;
+  padding: 0.5rem;
+  position: relative;
+  top: 1.2rem;
+}
+
+.horizontal_logo {
+  display: inline;
+  padding: 0.1rem;
   position: relative;
   top: 1rem;
 }
@@ -157,4 +164,8 @@ article {
 
 .social_logo {
   width: 25px;
+}
+
+.vertical.social_logo {
+  color: red;
 }
