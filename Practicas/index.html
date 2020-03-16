@@ -8,14 +8,27 @@
   <body>
     <header>
       <div class="header_date">
-        <div class="date left">3 logos</div>
-        <div class="date center">Jueves, 12 de Marzo 2020</div>
-        <div class="date right">2 logos</div>
+        <div class="element_header left">
+          <img
+            class="logos_header_left"
+            src="./Images/logos/logos_header_left.png"
+          />
+        </div>
+        <div class="element_header center date">Jueves, 12 de Marzo 2020</div>
+        <div class="element_header right">
+          <img
+            class="logos_header_right"
+            src="./Images/logos/logos_header_right.png"
+          />
+        </div>
       </div>
-
+      <!-- Revisar por qué este elemento no se acomoda correctamente -->
       <div class="header_title">
-        <img class="logo" src="./Images/logos/informador.png" />
-        <div class="title right">
+        <img
+          class="element_header center logo_informador_header"
+          src="./Images/logos/informador.png"
+        />
+        <div class="element_header right">
           <li class="horizontal_logo">
             <img class="social_logo" src="./Images/logos/facebook.png" />
           </li>
@@ -32,39 +45,31 @@
       </div>
 
       <nav class="header_nav">
-        <div class="nav left">
-          <li class="horizontal">JALISCO</li>
-          <li class="horizontal">MÉXICO</li>
-          <li class="horizontal">INTERNACIONAL</li>
-          <li class="horizontal">DEPORTES</li>
-          <li class="horizontal">ENTRETENIMIENTO</li>
-          <li class="horizontal">ECONOMÍA</li>
-          <li class="horizontal">IDEAS</li>
-          <li class="horizontal">CORONAVIRUS</li>
-          <li class="horizontal">VIDEOS</li>
-          <li class="horizontal">MÁS</li>
+        <div class="element_header left">
+          <li class="navbar_header">JALISCO</li>
+          <li class="navbar_header">MÉXICO</li>
+          <li class="navbar_header">INTERNACIONAL</li>
+          <li class="navbar_header">DEPORTES</li>
+          <li class="navbar_header">ENTRETENIMIENTO</li>
+          <li class="navbar_header">ECONOMÍA</li>
+          <li class="navbar_header">IDEAS</li>
+          <li class="navbar_header">CORONAVIRUS</li>
+          <li class="navbar_header">
+            <img class="logo_navbar" src="./Images/logos/video.png" />VIDEOS
+          </li>
+          <li class="navbar_header">
+            MÁS<img class="logo_navbar" src="./Images/logos/menu.png" />
+          </li>
         </div>
-        <!-- SI LO PONGO COMO LISTA SE SALE DEL ELEMENTO PADRE
-        ¿POR QUÉ? -->
-        <!-- <ul class="nav left">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-        </ul> -->
-
-        <div class="nav right">
-          Buscador
+        <div class="element_header right navbar_header search">
+          Buscar<img
+            class="logo_navbar search"
+            src="./Images/logos/search.png"
+          />
         </div>
       </nav>
     </header>
-
+    <!-- 
     <div class="container">
       <div class="bigger left">
         <article>
@@ -161,6 +166,6 @@
           </h4>
         </article>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
