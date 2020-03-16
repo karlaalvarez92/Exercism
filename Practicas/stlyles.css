@@ -1,9 +1,16 @@
-* {
+/*No utilices position relative y absolute*/
+body {
+  background: black;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   color: white;
   font-family: adelle-sans, sans-serif;
   font-style: normal;
   font-weight: 550;
 }
+
 /* 1.- ¿Por qué si son las mismas propiedades no puedo dar un solo
         nombre de clase? */
 .header_date {
@@ -77,7 +84,7 @@
   /*Este es otro que tuve que especificarle altura*/
   height: 35rem;
   padding: 0px;
-  background: black;
+  /* background: black; */
   position: relative;
   z-index: -10000000000;
 }
@@ -166,6 +173,6 @@ article {
   width: 25px;
 }
 
-.vertical.social_logo {
-  color: red;
+.vertical .social_logo {
+  opacity: 0.8;
 }
