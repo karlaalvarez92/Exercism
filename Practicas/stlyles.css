@@ -88,7 +88,7 @@ body {
 
 .logo_informador_header {
   width: 21rem;
-  margin-right: -23rem;
+  margin-right: -24rem;
 }
 
 .navbar_header {
@@ -107,39 +107,32 @@ body {
   padding-left: 0.5rem;
 }
 
-/*
-.container {
-  height: 35rem;
-  padding: 0px;
-
-  position: relative;
-  z-index: -10000000000;
-}
-
+/*  */
 article {
-  background: rgba(1, 1, 1, 0.3);
-  height: 31rem;
-}
-.mini {
-  display: block;
-
-  height: 15rem;
-  margin-bottom: 1rem;
+  height: auto;
+  position: relative;
 }
 
-.bigger {
-  width: 68%;
+.principal_article {
+  width: 62%;
 }
 
-.smaller {
-  width: 28%;
+.principal_image {
+  width: 100%;
+  filter: opacity(50%);
+}
+
+.secondary_articles {
+  width: 33%;
+}
+
+.secondary_images {
+  width: 100%;
+  filter: opacity(65%);
 }
 
 .label {
-  background: orange;
-  position: relative;
-  top: 20rem;
-  right: -1.7rem;
+  background: rgb(255, 136, 0);
   display: inline;
   font-weight: 500;
   padding: 0.5rem;
@@ -150,10 +143,7 @@ article {
 }
 
 .label_mini {
-  background: orange;
-  position: relative;
-  top: 8rem;
-  right: -1.1rem;
+  background: rgb(255, 136, 0);
   display: inline;
   font-weight: 500;
   font-size: 10px;
@@ -163,38 +153,52 @@ article {
   text-align: center;
 }
 
-.social {
-  width: auto;
-}
-
-.vertical {
-  color: cornsilk;
-  list-style: none;
-}
-
-.img {
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
-.title_big {
-  margin-top: 22rem;
-  margin-right: 18%;
-  margin-left: 3%;
-  font-size: 2rem;
-}
-
-.title_mini {
-  margin-top: 9rem;
-  margin-left: 1rem;
-}
-
-.social_logo {
-  width: 25px;
+.sports {
+  background: rgb(69, 176, 238);
 }
 
 .vertical .social_logo {
   opacity: 0.8;
+  margin: 0rem;
 }
-*/
+
+.social {
+  margin-right: 1rem;
+  list-style: none;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.text {
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  margin-right: 3rem;
+}
+.text_secondary {
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  margin-right: 2rem;
+}
+
+.social_mini {
+  position: relative;
+  bottom: 16rem;
+  left: 3rem;
+  list-style: none;
+  padding: 0%;
+}
+
+@media screen and (max-width: 1930px) {
+  .principal_article {
+    width: 60%;
+  }
+
+  .secondary_articles {
+    width: 30%;
+  }
+}
