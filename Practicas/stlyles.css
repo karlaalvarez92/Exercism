@@ -39,7 +39,6 @@ body {
 
 .element_header {
   display: inline-block;
-  /* background-color: red; */
 
   /* ESTO SE AGREGO SOLO PARA ACOMODAR LOS LOGOS 
   DE REDES DEL NAVBAR, NO SÉ POR QUÉ FUNCIONA */
@@ -48,11 +47,9 @@ body {
 
 .left {
   float: left;
-  /* background-color: orange; */
   margin-left: 3rem;
 }
 .right {
-  /* background-color: blueviolet; */
   float: right;
   margin-right: 3rem;
 }
@@ -62,7 +59,6 @@ body {
 }
 
 .logos_header_left {
-  /* background-color: salmon; */
   display: inline-block;
   width: 20rem;
 }
@@ -108,6 +104,10 @@ body {
 }
 
 /*  */
+.articles_container {
+  display: block;
+}
+
 article {
   height: auto;
   position: relative;
@@ -191,6 +191,69 @@ article {
   left: 3rem;
   list-style: none;
   padding: 0%;
+}
+
+/*  */
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+.footer_top {
+  height: 130rem;
+  position: relative;
+}
+
+.logos_footer_top {
+  width: 30%;
+  position: absolute;
+  bottom: 1%;
+  right: 34%;
+}
+
+.footer_center {
+  border-top: 0.3px solid rgb(73, 72, 72);
+}
+
+.informador_logo_footer {
+  width: 20rem;
+  margin-top: 3rem;
+}
+
+.nav_footer li {
+  list-style: none;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.grey {
+  color: grey;
+}
+
+.footer_bottom {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.logos_footer_left {
+  width: 13%;
+  display: inline-block;
+}
+
+.logos_footer_right {
+  width: 10%;
+  display: inline-block;
+}
+
+.text_footer {
+  display: inline-block;
+  color: gray;
+  font-weight: 100;
+}
+
+.text_footer li {
+  list-style: none;
+  display: inline-block;
 }
 
 @media screen and (max-width: 1930px) {
