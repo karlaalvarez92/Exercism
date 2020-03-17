@@ -1,5 +1,3 @@
-import { stringify } from "querystring";
-
 /*¿Mi string contiene todas las letras del abcdario? 
 Método every() revisa si cada letra está incluída en ABC */
 export const isPangram = sentence => {
