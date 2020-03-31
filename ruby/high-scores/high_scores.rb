@@ -4,22 +4,21 @@ class HighScores
   def initialize(scores)
     @scores = scores
   end
-  
+
   def latest
-    scores[-1]
+    scores.last
   end
 
   def personal_best
-    scores.sort[-1]
+    scores.max
   end
 
   def personal_top_three
-    sortedScores = scores.sort{|a, b| b <=> a}
-    sortedScores[0..2]
+    scores.max(3)
     end
 
   def latest_is_personal_best?
-    scores.max == scores[-1]
+    latest == personal_best
   end
 
 end
