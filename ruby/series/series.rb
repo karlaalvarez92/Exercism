@@ -3,18 +3,11 @@ class Series
         @number = number
     end
 
-    def slices(n)
-        if @number.length < n
+    def slices(size)
+        if @number.length < size
             raise ArgumentError.new
         else
-            slicesArray = []
-            max = @number.length-n
-
-            for i in(0..max)
-                slicesArray.push(@number.slice(i..i+n-1))
-            end
-
-            slicesArray
+           @number.chars.each_cons(size).map &:join     
         end      
     end
 end
