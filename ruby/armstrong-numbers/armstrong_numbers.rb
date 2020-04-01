@@ -1,8 +1,8 @@
-=begin
-Write your code for the 'Armstrong Numbers' exercise in this file. Make the tests in
-`armstrong_numbers_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/armstrong-numbers` directory.
-=end
+class ArmstrongNumbers
+    def self.include?(number)
+        numbersArray = number.to_s.chars.map{|el| el.to_i}
+        calculated = numbersArray.map{|el| el ** numbersArray.length}.sum
+        calculated == number
+    end
+end
 
