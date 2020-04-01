@@ -1,7 +1,7 @@
 class Isogram
     def self.isogram?(string)
-        cleanString= string.downcase.gsub(/[\s-]/, "").chars
-        cleanString.uniq == cleanString
+        clean_string= string.downcase.gsub(/[\s-]/, "").chars
+        clean_string.uniq == clean_string
     end
 end
 
