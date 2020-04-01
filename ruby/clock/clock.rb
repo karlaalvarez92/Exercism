@@ -1,9 +1,12 @@
 class Clock
     attr_reader :hour, :minute
+    MINUTES_IN_HOUR= 60
+    SECONDS_IN_MINUTE=60
+
     def initialize(hour:0, minute:0)
         @hour = hour
         @minute = minute
-        @totalSeconds= (@hour*60 + @minute)* 60
+        @totalSeconds= (@hour * MINUTES_IN_HOUR + @minute) * SECONDS_IN_MINUTE
     end
 
     def to_s
