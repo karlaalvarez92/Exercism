@@ -23,34 +23,29 @@ class Scrabble
             "U"=>1,
             "V"=> 4,
             "W" => 4,
+            "X" => 8,
             "Y" => 4,
             "Z" => 10
-          }
+}.freeze
 
     def initialize(letters)
-        #puts letters.to_s.upcase.chars
-        @letters = letters.to_s.upcase.split("")
-        #puts @letters
+        @letters = letters
+       
     end
 
     def self.score letters
-        (new letters).score
+        new(letters).score
     end
 
-    def score
-        totalScore= 0
-
-        scores = @letters.map{|letter| totalScore += VALUES[:letter].to_i}
-        #puts scores
-        puts VALUES[:"A"]
-        #puts @letters
-        
-        #totalScore
-        
-        
-    end
-
-   
+    def score  
+         @letters
+         .to_s
+         .upcase
+         .chars
+         .reduce(0) do |acc, letter| acc + VALUES[letter]
+         .to_i 
+        end      
+    end   
 end
 
 
