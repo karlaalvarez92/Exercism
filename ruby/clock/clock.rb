@@ -6,11 +6,11 @@ class Clock
     def initialize(hour:0, minute:0)
         @hour = hour
         @minute = minute
-        @totalSeconds= (@hour * MINUTES_IN_HOUR + @minute) * SECONDS_IN_MINUTE
+        @totalSeconds= (hour * MINUTES_IN_HOUR + minute) * SECONDS_IN_MINUTE
     end
 
     def to_s
-        Time.at(@totalSeconds).utc.strftime("%H:%M") #=> "01:00:00    
+        Time.at(@totalSeconds).utc.strftime("%H:%M") #=> "01:00"   
     end
 
     def +(newClock)
