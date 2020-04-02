@@ -4,7 +4,7 @@ require_relative 'rna_transcription'
 # Common test data version: 1.3.0 294c831
 class RnaTranscriptionTest < Minitest::Test
   def test_empty_rna_sequence
-    # skip
+     skip
     assert_equal '', Complement.of_dna('')
   end
 
@@ -29,7 +29,7 @@ class RnaTranscriptionTest < Minitest::Test
   end
 
   def test_rna_complement
-    skip
+    #skip
     assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
   end
 end
