@@ -1,8 +1,21 @@
-=begin
-Write your code for the 'Robot Name' exercise in this file. Make the tests in
-`robot_name_test.rb` pass.
+class Robot
+    @letters = ('AA'..'ZZ').to_a
+    @numbers = (0..999).to_a.map {|num| num.to_s.rjust(3, "0")}
 
-To get started with TDD, see the `README.md` file in your
-`ruby/robot-name` directory.
-=end
+    attr_reader :name
+
+    def initialize
+        @name = @@all_names.pop 
+    end
+
+    def self.forget
+        @@all_names = @letters.map {|two_letters| @numbers.map {|three_numbers| two_letters + three_numbers} }.flatten.shuffle
+    end
+
+    def reset
+        @name = @@all_names.pop 
+    end
+
+end
+
 
