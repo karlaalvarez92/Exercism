@@ -3,16 +3,20 @@ class Prime
         raise ArgumentError.new if size.zero?
         #hasta que mi array sea == size, necesito obtener todos los numero 
         #primos existenten y agregarlos al array, retornar el último primo
-        prime_numbers=[]
-        current_number=1
+        @@prime_numbers=[]
+        current_number=2
 
-        until prime_numbers.length == size
-            i=0
-            (1..104743).each{|n| i+=1 if current_number % n == 0}
-            prime_numbers << current_number if i == 2
+        until @@prime_numbers.length == size
+            @@prime_numbers << current_number if prime?(current_number)
             current_number+=1 
         end
-        prime_numbers[-1]
+        @@prime_numbers.last
+    end
+    
+
+    
+    def self.prime?(number)
+        return true if @@prime_numbers.empty?
+        @@prime_numbers.each{|n|return false if number % n == 0}
     end
 end
-
