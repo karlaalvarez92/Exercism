@@ -1,23 +1,19 @@
 class Sieve
-    def initialize(number)
-        @number=number 
-        @prime_numbers=[]      
+    def initialize(limit)
+        @limit=limit
+        @primes = (2..@limit).to_a
+        
     end
 
     def primes
-        current_number=2
-
-        while current_number <= @number     
-            @prime_numbers << current_number if prime?(current_number)
-            current_number+=1   
-        end
-
-        @prime_numbers 
+    current_number=2
+    
+    while current_number < @limit
+    (2..@limit).each{ |n| @primes.delete(n * current_number)}
+    current_number+=1
     end
 
-    def prime?(number)
-        return true if @prime_numbers.empty?
-        @prime_numbers.each{|n|return false if number % n == 0}
-    end
+    @primes
+end
 end
 
