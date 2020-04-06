@@ -1,8 +1,12 @@
-=begin
-Write your code for the 'Bob' exercise in this file. Make the tests in
-`bob_test.rb` pass.
+class Bob
+    def self.hey(remark)
+        remark = remark.gsub(/\s+/, "")
+        return "Fine. Be that way!" if remark == ""
+        return "Calm down, I know what I'm doing!" if remark.match(/[A-Z]/) && remark.upcase == remark && remark.chars.last== "?"
+        return "Whoa, chill out!" if remark.match(/[A-Z]/) && remark.upcase == remark 
+        return "Sure." if remark.chars.last== "?"
+        return "Whatever."
+    end
+end
 
-To get started with TDD, see the `README.md` file in your
-`ruby/bob` directory.
-=end
 
