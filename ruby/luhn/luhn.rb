@@ -1,6 +1,6 @@
 class Luhn
     def self.valid?(number)
-        cleanNumber= number.gsub(/\s/, "")
+        cleanNumber= number.delete(" ")
         if cleanNumber.length <=1 || cleanNumber.match?(/[A-Za-z:#$-]/)
             return false
         else
