@@ -3,7 +3,7 @@ class Array
     def accumulate(&block)
         result=[]
         for value in self
-            result << block.call(value)
+            result << yield(value)
         end
         result
     end
