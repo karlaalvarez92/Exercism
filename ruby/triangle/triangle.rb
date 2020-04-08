@@ -3,7 +3,6 @@ class Triangle
 
     def initialize(sides)
       @sides = sides
-      return false unless triangle?
     end
   
     def equilateral?
