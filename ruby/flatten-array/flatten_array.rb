@@ -1,8 +1,9 @@
-=begin
-Write your code for the 'Flatten Array' exercise in this file. Make the tests in
-`flatten_array_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/flatten-array` directory.
-=end
+class FlattenArray
+    def self.flatten(compound_array, flatten_array=[])
+        compound_array.each { |el| 
+        el.is_a?(Array) ? flatten(el, flatten_array) : flatten_array << el } 
+        
+        flatten_array.compact
+    end
+end
 
