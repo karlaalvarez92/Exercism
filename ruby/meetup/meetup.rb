@@ -1,8 +1,31 @@
-=begin
-Write your code for the 'Meetup' exercise in this file. Make the tests in
-`meetup_test.rb` pass.
+require "date"
+class Meetup
+    attr_reader :month, :year
 
-To get started with TDD, see the `README.md` file in your
-`ruby/meetup` directory.
-=end
+    COUNTER = {
+    first: 1,
+    second: 8,
+    third: 15,
+    fourth: 22,
+    teenth: 13,
+    last: -7
+  }
+
+    def initialize(month, year)
+        @month = month
+        @year = year
+
+    end
+    def day(weekday, counting  )
+        i=0
+        date = Date.new(year, month, (COUNTER[counting])+i )
+        date = date.next until date.send("#{weekday}?")
+        date
+        
+    end
+end
+
+#d = Date.parse('3rd Feb 2001')
+#d.strftime('%a %d %b %Y')
+
 
