@@ -17,8 +17,8 @@ class Meetup
 
     end
     def day(weekday, counting  )
-        i=0
-        date = Date.new(year, month, (COUNTER[counting])+i )
+    
+        date = Date.new(year, month, COUNTER[counting] )
         date = date.next until date.send("#{weekday}?")
         date
         
