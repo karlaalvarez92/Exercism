@@ -1,8 +1,11 @@
-class Array
+# frozen_string_literal: true
 
-  def accumulate(&block)
-    result=[]
-    for value in self
+# Class Array
+#
+class Array
+  def accumulate
+    result = []
+    each do |value|
       result << yield(value)
     end
 
