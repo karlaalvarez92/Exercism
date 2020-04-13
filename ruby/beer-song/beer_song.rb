@@ -10,6 +10,7 @@ class BeerSong
         lyrics= [] 
 
         start.downto(start-finish+1){ |n| 
+        strophe =
         bottles = "bottle" if n - 1 == 1
 
         lyrics << "#{n} bottles of beer on the wall, #{n} bottles of beer.\nTake one down and pass it around, #{n-1} #{bottles} of beer on the wall.\n" if n > 1
