@@ -1,7 +1,7 @@
-# Clase
-#
 # frozen_string_literal: true
 
+# Class PhoneNumber
+#
 class PhoneNumber
   def self.clean(phone_number)
     clean_phone_number = phone_number.gsub(/^\+?1|\D/, '')
