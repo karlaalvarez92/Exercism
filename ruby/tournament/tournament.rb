@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
+# Class Tournament
+#
 class Tournament
-  HEADER = "Team                           | MP |  W |  D |  L |  P".freeze
+  HEADER = 'Team                           | MP |  W |  D |  L |  P'
 
   def self.tally(input)
     final_scores = {}
-
 
     input.split("\n").each do |line|
       local, visitor, result = line.split("\;")
@@ -18,8 +21,8 @@ class Tournament
 
         final_scores[local][:points] += 3
 
-        final_scores[local][:match_played] +=1
-        final_scores[visitor][:match_played] +=1
+        final_scores[local][:match_played] += 1
+        final_scores[visitor][:match_played] += 1
       when 'draw'
         final_scores[local][:draws] += 1
         final_scores[visitor][:draws] += 1
@@ -27,8 +30,8 @@ class Tournament
         final_scores[local][:points] += 1
         final_scores[visitor][:points] += 1
 
-        final_scores[local][:match_played] +=1
-        final_scores[visitor][:match_played] +=1
+        final_scores[local][:match_played] += 1
+        final_scores[visitor][:match_played] += 1
 
       when 'loss'
 
@@ -37,11 +40,10 @@ class Tournament
 
         final_scores[visitor][:points] += 3
 
-        final_scores[local][:match_played] +=1
-        final_scores[visitor][:match_played] +=1
+        final_scores[local][:match_played] += 1
+        final_scores[visitor][:match_played] += 1
       end
     end
-
 
     body = final_scores.map do |k, v|
       [k, v[:match_played], v[:wins], v[:draws], v[:losses], v[:points]]
@@ -55,24 +57,21 @@ class Tournament
       else
         points_team_b <=> points_team_a
       end
-    end#.reverse
+    end
 
     scores_formatted_for_output = body.map do |line|
       "#{line[0].ljust(31, ' ')}|  #{line[1]} |  #{line[2]} |  #{line[3]} |  #{line[4]} |  #{line[5]}"
     end
 
-
-    # byebug
     expected = <<~TALLY
-    #{HEADER}
+      #{HEADER}
     TALLY
     if input.length > 1
       scores_formatted_for_output.each do |score|
         expected += score + "\n"
       end
-    else
     end
-    # byebug
+
     expected
   end
 end
