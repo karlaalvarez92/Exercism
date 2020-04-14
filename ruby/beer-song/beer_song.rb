@@ -4,23 +4,23 @@
 #
 class BeerSong
   def self.recite(start, finish)
-    bottles = 'bottles'
+    start.downto(start - finish + 1).map { |i| verse(i) }.join("\n")
+  end
 
-    penultimate_strophe = "1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n"
-    final_strophe = "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
-
-    lyrics = []
-
-    start.downto(start - finish + 1) do |n|
-      bottles = 'bottle' if n - 1 == 1
-
-      if n > 1
-        lyrics << "#{n} bottles of beer on the wall, #{n} bottles of beer.\nTake one down and pass it around, #{n - 1} #{bottles} of beer on the wall.\n"
-      end
-      lyrics << penultimate_strophe if n == 1
-      lyrics << final_strophe if n == 0
+  def self.verse(number)
+    case number
+    when 0
+      "No more bottles of beer on the wall, no more bottles of beer.\n" \
+      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    when 1
+      "1 bottle of beer on the wall, 1 bottle of beer.\n" \
+      "Take it down and pass it around, no more bottles of beer on the wall.\n"
+    when 2
+      "2 bottles of beer on the wall, 2 bottles of beer.\n" \
+      "Take one down and pass it around, 1 bottle of beer on the wall.\n"
+    else
+      "#{number} bottles of beer on the wall, #{number} bottles of beer.\n" \
+      "Take one down and pass it around, #{number - 1} bottles of beer on the wall.\n"
     end
-
-    lyrics.join("\n")
   end
 end
