@@ -1,8 +1,29 @@
-=begin
-Write your code for the 'Wordy' exercise in this file. Make the tests in
-`wordy_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/wordy` directory.
-=end
+# Class WordProblem
+#
+class WordProblem
+  def initialize(problem)
+    @problem = problem
+  end
 
+  def answer
+    solve = 0
+    @problem.scan(/([^-?0-9]+)(-?[0-9]*)/).each do |operator, number|
+      int = number.to_i
+      operator = operator.strip
+
+      unless operator.match?(/What is|plus|minus|multiplied by|divided by/)
+        raise ArgumentError
+      end
+
+      solve = int if operator == 'What is'
+      solve += int if operator == 'plus'
+      solve -= int if operator == 'minus'
+      solve *= int if operator == 'multiplied by'
+      solve /= int if operator == 'divided by'
+    end
+
+    solve
+  end
+end
