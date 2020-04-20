@@ -1,8 +1,30 @@
-=begin
-Write your code for the 'Scale Generator' exercise in this file. Make the tests in
-`scale_generator_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/scale-generator` directory.
-=end
+# Class Scale
+#
+class Scale
+  attr_reader :name
+  SHARP_INTERVALS = %w[C C# D D# E F F# G G# A A# B].freeze
+  FLAT_INTERVALS = %w[C Db D Eb E F Gb G Ab A Bb B].freeze
+  FLAT_NOTES = %w[F bb Eb g d Db].freeze
+  STEPS = { 'm' => 1, 'M' => 2, 'A' => 3 }.freeze
 
+  def initialize(tonic, scale, steps = 'mmmmmmmmmmmm')
+    @tonic = tonic
+    @steps = steps
+    @name = "#{tonic.upcase} #{scale}"
+  end
+
+  def pitches
+    notes = FLAT_NOTES.include?(@tonic) ? FLAT_INTERVALS : SHARP_INTERVALS
+
+    current = notes.index(@tonic.capitalize)
+    array = []
+    @steps.each_char do |step|
+      current -= 12 if current > 11
+      array << notes[current]
+      current += STEPS[step]
+    end
+    array
+  end
+end
