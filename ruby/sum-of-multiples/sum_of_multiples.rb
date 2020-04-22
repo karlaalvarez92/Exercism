@@ -1,8 +1,20 @@
-=begin
-Write your code for the 'Sum Of Multiples' exercise in this file. Make the tests in
-`sum_of_multiples_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/sum-of-multiples` directory.
-=end
+# Class SumOfMultiples
+#
+class SumOfMultiples
+  def initialize(*multiples)
+    @multiples = multiples
+  end
 
+  def to(number)
+    return 0 if number == 1 || @multiples.empty?
+
+    (1...number).select { |num| multiple?(num) }
+                .reduce(:+)
+  end
+
+  def multiple?(number)
+    @multiples.any? { |multiple| (number % multiple).zero? }
+  end
+end
