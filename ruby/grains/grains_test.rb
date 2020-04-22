@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'grains'
 
@@ -9,17 +11,17 @@ class GrainsTest < Minitest::Test
   end
 
   def test_2
-    skip
+    # skip
     assert_equal 2, Grains.square(2)
   end
 
   def test_3
-    skip
+    # skip
     assert_equal 4, Grains.square(3)
   end
 
   def test_4
-    skip
+    # skip
     assert_equal 8, Grains.square(4)
   end
 
