@@ -1,8 +1,13 @@
-=begin
-Write your code for the 'ETL' exercise in this file. Make the tests in
-`etl_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/etl` directory.
-=end
-
+# Class ETL
+#
+class ETL
+  def self.transform(old)
+    expected = {}
+    old.map do |key, value|
+      value.map(&:downcase).each { |letter| expected[letter] = key }
+    end
+    expected
+  end
+end
