@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'bowling'
 
 # Common test data version: 1.2.0 1806718
 class BowlingTest < Minitest::Test
   def test_should_be_able_to_score_a_game_with_all_zeros
-    # skip
+    skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -264,7 +266,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_cannot_roll_after_bonus_rolls_for_strike
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2]
     rolls.each { |pins| game.roll(pins) }
