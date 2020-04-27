@@ -13,3 +13,7 @@ class Anagram
     end
   end
 end
+
+# Esto funciona perfectamente en la linea 12
+# words.find_all { |w| w.downcase.chars.sort == word.downcase.chars.sort }
+# .reject { |w| w.downcase == word.downcase }
