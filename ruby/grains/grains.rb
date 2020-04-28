@@ -14,6 +14,6 @@ class Grains
   end
 
   def self.total
-    BASE**MAX_BOARD - MIN_BOARD
+    (1..MAX_BOARD).reduce { |acc, value| acc + square(value) }
   end
 end
