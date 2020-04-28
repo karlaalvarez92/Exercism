@@ -1,8 +1,20 @@
-=begin
-Write your code for the 'Nucleotide Count' exercise in this file. Make the tests in
-`nucleotide_count_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/nucleotide-count` directory.
-=end
+class Nucleotide
+  def self.from_dna(dna)
+    @dna = dna
+    raise ArgumentError if @dna.match?(/[^ATCG]/)
 
+    self
+  end
+
+  def self.count(nucleotide)
+    @dna.count(nucleotide)
+  end
+
+  def self.histogram
+    hash = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }
+    @dna.chars.tally.map { |key, value| hash[key] = value }
+    hash
+  end
+end
