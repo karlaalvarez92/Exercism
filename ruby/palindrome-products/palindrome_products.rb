@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+# Class Palindromes
+#
 class Palindromes
-  # Palindrome = Structure.new(:value)
+  Palindrome = Struct.new(:value, :factors)
   attr_reader :largest, :smallest
 
   def initialize(input)
@@ -32,13 +34,5 @@ class Palindromes
       (number % num).zero? && @range.include?(number / num)
     end
     numbers.map { |num| [num, number / num].sort }.uniq
-  end
-end
-
-class Palindrome
-  attr_reader :value, :factors
-  def initialize(value, factors)
-    @value = value
-    @factors = factors
   end
 end
