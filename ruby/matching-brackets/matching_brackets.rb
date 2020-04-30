@@ -1,8 +1,16 @@
-=begin
-Write your code for the 'Matching Brackets' exercise in this file. Make the tests in
-`matching_brackets_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/matching-brackets` directory.
-=end
+# Class Brackets
+#
+class Brackets
+  def self.paired?(string)
+    string = string.gsub(/[^\[\]\(\)\{\}]/, '')
+    return false if string.length.odd?
 
+    while string.match?(/\[\]|\(\)|\{\}/)
+      string = string.gsub(/\[\]|\(\)|\{\}/, '')
+    end
+
+    string == ''
+  end
+end
