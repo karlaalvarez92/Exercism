@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'palindrome_products'
 
@@ -11,7 +13,7 @@ class PalindromesTest < Minitest::Test
   end
 
   def test_largest_palindrome_from_double_digit_factors
-    skip
+    # skip
     palindromes = Palindromes.new(max_factor: 99, min_factor: 10)
     palindromes.generate
     largest = palindromes.largest
@@ -20,7 +22,7 @@ class PalindromesTest < Minitest::Test
   end
 
   def test_smallest_palindrome_from_double_digit_factors
-    skip
+    # skip
     palindromes = Palindromes.new(max_factor: 99, min_factor: 10)
     palindromes.generate
     smallest = palindromes.smallest
@@ -29,7 +31,7 @@ class PalindromesTest < Minitest::Test
   end
 
   def test_largest_palindrome_from_triple_digit_factors
-    skip
+    # skip
     palindromes = Palindromes.new(max_factor: 999, min_factor: 100)
     palindromes.generate
     largest = palindromes.largest
@@ -38,7 +40,7 @@ class PalindromesTest < Minitest::Test
   end
 
   def test_smallest_palindrome_from_triple_digit_factors
-    skip
+    # skip
     palindromes = Palindromes.new(max_factor: 999, min_factor: 100)
     palindromes.generate
     smallest = palindromes.smallest
