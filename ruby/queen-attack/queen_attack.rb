@@ -1,8 +1,20 @@
-=begin
-Write your code for the 'Queen Attack' exercise in this file. Make the tests in
-`queen_attack_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/queen-attack` directory.
-=end
+class Queens
+  ROW = 0
+  COLUMN = 1
 
+  def initialize(input)
+    @white = input[:white]
+    @black = input[:black] || [0, 0]
+
+    raise ArgumentError unless @white.all? { |box| box.between?(0, 7) }
+  end
+
+  def attack?
+    @white[ROW] == @black[ROW] ||
+      @white[COLUMN] == @black[COLUMN] ||
+      @white.sum == @black.sum ||
+      (@white[COLUMN] == @white[ROW] && @black[COLUMN] == @black[ROW])
+  end
+end
