@@ -32,6 +32,11 @@ export const encode = string => {
     count = 1,
     encoding = "";
 
+  //comparar el primero con el siguiente
+  //currentValue
+  //Mientras sea el mismo aumento el contador
+  //si cambia concateno el contador con el currentValue y cambia el valor de
+  //del contador y el current value cambia.
   for (let i = 1; i <= string.length; i++) {
     if (string[i] !== prev) {
       if (count == 1) {
@@ -48,7 +53,7 @@ export const encode = string => {
     }
   }
   encoding += count + prev;
-  //Cuando se detenía en el último carácter me escribía el 1 antes de la letra.
+  //Cuando se detenía en el último carácter me escribía el 1 antes de la
   encoding = encoding.replace("NaN", "");
   return encoding;
 };

@@ -21,13 +21,12 @@ class Cipher
   end
 
   def encode(plaintext)
-    plaintext = plaintext.chars
     keys = @key.chars.slice(0, plaintext.length)
 
     encode = ''
-    plaintext.each_with_index do |letter, index|
+    plaintext.chars.each_with_index do |letter, index|
       new_index = position_of(keys[index]) + position_of(letter)
-      new_index > 25 ? encode_letter = KEYS[new_index - 26] : encode_letter = KEYS[new_index]
+      encode_letter = new_index > 25 ? KEYS[new_index - KEYS.length] : KEYS[new_index]
       encode += encode_letter
     end
     encode

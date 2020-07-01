@@ -11,17 +11,16 @@ class Series
     return 1 if size.zero?
 
     valid_number?(size)
-    digits = @number.chars.map(&:to_i)
-
     array = []
-    digits.each_cons(size) { |slice| array << slice.reduce(&:*) }
+    @number.chars
+           .map(&:to_i)
+           .each_cons(size) { |slice| array << slice.reduce(&:*) }
     array.max
   end
 
   def valid_number?(size)
-    if @number.length < size ||
-       (@number == '' && size.positive?) ||
-       @number.match?(/\D/) || size.negative?
+    if @number.match?(/\D/) ||
+       @number.length < size
       raise ArgumentError
     end
   end

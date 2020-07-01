@@ -1,5 +1,6 @@
 export const valid = number => {
   let cleanNumber = number.replace(/\s/g, "");
+
   if (number <= 1 || number.match(/[A-Za-z:#$-]/g)) {
     return false;
   }

@@ -1,18 +1,38 @@
-//
-// This is only a SKELETON file for the 'Grade School' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+//Puse la constante afuera porque no estoy segura de si debería utilizar
+//un constructor
 
+const SCHOOL_LIST = {};
+//let names = [];
 export class GradeSchool {
+  constructor() {
+    this.schoolList = {};
+  }
   roster() {
-    throw new Error("Remove this statement and implement this function");
+    return SCHOOL_LIST;
+    //return this.schoolList;
   }
 
-  add() {
-    throw new Error("Remove this statement and implement this function");
+  add(name, grade) {
+    if (grade in this.schoolList) {
+      this.schoolList[grade] = [...this.schoolList, name];
+    } else {
+      this.schoolList[grade] = [name];
+    }
+    //console.log(this.schoolList);
+    return this.schoolList;
   }
 
-  grade() {
-    throw new Error("Remove this statement and implement this function");
-  }
+  /* console.log(this.schoolList);
+    return this.schoolList; */
+
+  /* if (SCHOOL_LIST[grade]) {
+      SCHOOL_LIST[grade].push(name);
+    } else {
+      SCHOOL_LIST[grade] = [name];
+    } */
+  /*   console.log(SCHOOL_LIST);
+    return (SCHOOL_LIST[grade] = [name]); */
+  //}
+
+  grade() {}
 }

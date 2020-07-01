@@ -2,21 +2,22 @@
 
 class School
   def initialize
-    @list = {}
+    @students = Hash.new { |hash, key| hash[key] = [] }
   end
 
   def add(student, grade)
-    @list[grade] ? @list[grade] << student : @list[grade] = [student]
+    @students[grade] << student
   end
 
   def students(grade)
-    return [] if @list[grade].nil?
-
-    @list[grade].sort
+    @students[grade].sort
   end
 
   def students_by_grade
-    @list.map { |grade| { grade: grade[0], students: grade[1].sort } }
-         .sort { |x, y| x[:grade] <=> y[:grade] }
+    return [] if @students.empty?
+
+    @students.sort.map do |grade, students|
+      { grade: grade, students: students.sort }
+    end
   end
 end

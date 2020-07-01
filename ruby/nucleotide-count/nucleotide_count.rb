@@ -18,3 +18,5 @@ class Nucleotide
     hash
   end
 end
+
+## Reduce de hash map

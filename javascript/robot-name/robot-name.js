@@ -23,16 +23,6 @@ export class Robot {
     );
   }
 
-  reset() {
-    this.usedNames.push(this._name);
-    this._name = this.randomName();
-    for (let i = 0; i < this.usedNames.length; i++) {
-      if (this._name == this.usedNames[i]) {
-        this._name = this.randomName();
-      }
-    }
-  }
-
   get name() {
     return this._name;
   }

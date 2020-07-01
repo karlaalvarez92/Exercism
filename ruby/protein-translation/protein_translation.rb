@@ -23,9 +23,9 @@ class Translation
   def self.of_rna(strand)
     proteins = []
     strand.chars.each_slice(3) do |slice|
-      PROTEINS.each do |key, value|
-        return proteins if %w[UAA UAG UGA].include?(slice.join)
+      return proteins if %w[UAA UAG UGA].include?(slice.join)
 
+      PROTEINS.each do |key, value|
         proteins << key.to_s if value.include?(slice.join)
       end
     end

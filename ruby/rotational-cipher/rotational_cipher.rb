@@ -16,7 +16,6 @@ class RotationalCipher
       elsif letter.match?(/[a-z]/)
         original_index = LETTERS.index(letter)
         new_order = LETTERS.rotate(n)
-        new_order[original_index]
         ciphertext += new_order[original_index]
 
       else

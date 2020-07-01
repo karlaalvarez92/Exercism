@@ -1,45 +1,48 @@
-export const answer = question => {
-  let clean = question
-    .replace(/(What\sis\s?)/g, "")
-    .replace("?", "")
-    .replace(/(by)/g, "")
-    .replace(/(plus)/g, "+")
-    .replace(/(minus)/g, "-")
-    .replace(/(multiplied)/g, "*")
-    .replace(/(divided)/g, "/")
-    .replace(/\s+/g, " ");
+export const answer = (string) => {
+  let sanitized = sanitize(string);
+  let UknowOperationError = new Error("Syntax error");
+  console.log(sanitized);
+  console.log(eval(sanitized), "<---- eval sanitized");
 
-  console.log(question, [clean]);
-
-  let array = question.split(" ");
-  if (array[0] !== "What" || clean.match(/[A-Za-z]/g)) {
-    throw new Error("Unknown operation");
+  if (eval(sanitized) !== undefined) {
+    console.log("pasa");
+    return eval(sanitized);
+  } else {
+    console.log("no pasa");
   }
-
-  if (!clean.match(/[A-Za-z\+\-\*\/]/g)) {
-    return Number(clean);
-  }
-
-  if (
-    question.match(/(\d\s\d)/g) ||
-    !question.match(/-?\d+/g) ||
-    !clean.match(/(-?\d+\s)[\+\-\*\/]\s(-?\d+)/g)
-  ) {
-    throw new Error("Syntax error");
-  }
-
-  let firstOperation = eval(
-    clean
-      .split(" ")
-      .slice(0, 3)
-      .join(" ")
-  );
-
-  let secondOperation = clean
-    .split(" ")
-    .slice(3, 5)
-    .join(" ");
-
-  console.log(question, clean);
-  return eval(firstOperation + secondOperation);
+  // return result;
 };
+export const getAllSigns = (array) => {
+  return array.filter((element) => element === "/" || "+" || "-" || "*");
+};
+export const doOperation = (arraySan) => {
+  let result1 = arraySan.split("/");
+  let splited = arraySan.split("");
+  let result2 = getAllSigns(splited);
+
+  console.log(result1);
+  console.log(splited);
+};
+
+export const sanitize = (string) => {
+  return string
+    .replace("What ", "")
+    .replace("is ", "")
+    .replace("?", "")
+    .replace(/by/g, "")
+    .split("plus")
+    .join("+")
+    .split("minus")
+    .join("-")
+    .split("divided")
+    .join("/")
+    .split("multiplied")
+    .join("*");
+};
+// export const getOperation = array => {
+//   console.log("from getOperation", array[3]);
+//   return array[3];
+// };
+export const getNumbers = (string) => string.replace(/\D/g, "");
+
+export const stringToArr = (string) => string.split(" +");

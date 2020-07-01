@@ -6,20 +6,12 @@ class CollatzConjecture
   def self.steps(number)
     raise ArgumentError unless number.positive?
 
-    number_of_steps = 0
+    steps = 0
 
     while number != 1
-      if (number % 2).zero?
-        number /= 2
-      else
-        number = 3 * number + 1
-      end
-      number_of_steps += 1
+      number.odd? ? number = 3 * number + 1 : number /= 2
+      steps += 1
     end
-    number_of_steps
+    steps
   end
 end
-
-# if (number <= 0) {
-#   throw Error("Only positive numbers are allowed");
-# }

@@ -1,23 +1,23 @@
-//
-// This is only a SKELETON file for the 'Pythagorean Triplet' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Triplet {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(a, b, c) {
+    this._a = a;
+    this._b = b;
+    this._c = c;
   }
 
   sum() {
-    throw new Error("Remove this statement and implement this function");
+    return this._a + this._b + this._c;
   }
 
   product() {
-    throw new Error("Remove this statement and implement this function");
+    return this._a * this._b * this._c;
   }
 
   isPythagorean() {
-    throw new Error("Remove this statement and implement this function");
+    return (
+      this._a < this._b < this._c &&
+      Math.pow(this._a, 2) + Math.pow(this._b, 2) == Math.pow(this._c, 2)
+    );
   }
 
   static where() {

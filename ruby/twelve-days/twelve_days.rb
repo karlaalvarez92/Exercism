@@ -16,19 +16,24 @@ class TwelveDays
     12 => ['twelfth', 'twelve Drummers Drumming, ']
   }.freeze
 
+  ORDINAL_INDEX = 0
+  GIFT_INDEX = 1
+  MAX_VERSE = 12
+
   def self.song
     line_break = "\n"
     verse = ''
-    (1..12).each do |num|
-      line_break = '' if num == 12
-      verse += "On the #{SONG[num][0]} day of Christmas my true love gave to me: " + gifts(num) + line_break
+    (1..MAX_VERSE).each do |num|
+      line_break = '' if num == MAX_VERSE
+      verse +=
+        "On the #{SONG[num][ORDINAL_INDEX]} day of Christmas my true love gave to me: " + gifts(num) + line_break
     end
     verse
   end
 
   def self.gifts(start)
     gifts = ''
-    start.downto(1) { |num| gifts += SONG[num][1] }
+    start.downto(1) { |num| gifts += SONG[num][GIFT_INDEX] }
     gifts
   end
 end

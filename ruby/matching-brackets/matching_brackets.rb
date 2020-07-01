@@ -14,3 +14,7 @@ class Brackets
     string == ''
   end
 end
+
+#Hacerlo con pila revisar ejercicio de Juan
+#Investigar autómata de pila
+

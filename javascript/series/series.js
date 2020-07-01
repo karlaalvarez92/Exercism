@@ -1,21 +1,21 @@
 export class Series {
   constructor(string) {
-    this.numbersArray = string.split("").map(element => Number(element));
+    this.digitsArray = string.split("").map(element => Number(element));
   }
 
   get digits() {
-    return this.numbersArray;
+    return this.digitsArray;
   }
 
   slices(n) {
-    if (this.numbersArray.length < n) {
+    if (this.digitsArray.length < n) {
       throw new Error("Slice size is too big.");
     }
 
     let seriesArray = [];
 
-    for (let i = 0; i <= this.numbersArray.length - n; i++) {
-      seriesArray.push(this.numbersArray.slice(i, i + n));
+    for (let i = 0; i <= this.digitsArray.length - n; i++) {
+      seriesArray.push(this.digitsArray.slice(i, i + n));
     }
     return seriesArray;
   }

@@ -6,7 +6,6 @@ export const commands = number => {
 
   let actions = [];
   binaryReverse.map((el, i) => {
-    console.log(el, i);
     if (el == 1) {
       if (i == 4) {
         actions.reverse();

@@ -96,7 +96,7 @@ body {
 
 .navbar_header:hover {
   color: rgb(255, 136, 0);
-  text-decoration: underline;
+  border-bottom: rgb(255, 136, 0) solid 2px;
 }
 
 .logo_navbar {
@@ -129,6 +129,10 @@ article:hover {
 .principal_image {
   width: 100%;
   filter: opacity(50%);
+}
+
+article:hover {
+  width: 100rem;
 }
 
 .secondary_articles {

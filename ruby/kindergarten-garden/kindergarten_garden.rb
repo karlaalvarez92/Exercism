@@ -20,26 +20,21 @@ class Garden
     @kids = kids.sort
     @plants = plants
 
-    puts @kids
-
-    cups = plants.split(/\n/).map(&:chars)
     plants_in_cups = []
-    cups.each do |array|
-      row = []
-      array.each do |plant|
-        row << PLANTS[plant]
-      end
+    @plants.split(/\n/)
+           .map(&:chars)
+           .each do |line|
+      line.map! { |plant| PLANTS[plant] }
       per_child = []
-      row.each_slice(PLANTS_PER_CHILD) { |slice| per_child << slice }
+      line.each_slice(PLANTS_PER_CHILD) { |slice| per_child << slice }
       plants_in_cups << per_child
     end
 
     @kids.each_with_index do |kid, index|
       per_child = []
       define_singleton_method(kid.downcase) do
-        plants_in_cups.each do |row|
-          per_child << row[index]
-        end
+        plants_in_cups.each { |row| per_child << row[index] }
+
         per_child.flatten
       end
     end

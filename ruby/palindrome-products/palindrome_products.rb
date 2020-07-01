@@ -18,6 +18,7 @@ class Palindromes
     @smallest = Palindrome.new(@palindromes.min, factors(@palindromes.min))
   end
 
+  ### utilizar combination
   def palindromes
     array = []
     @range.map do |num|
@@ -36,3 +37,4 @@ class Palindromes
     numbers.map { |num| [num, number / num].sort }.uniq
   end
 end
+

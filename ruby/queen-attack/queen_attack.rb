@@ -18,3 +18,6 @@ class Queens
       (@white[COLUMN] == @white[ROW] && @black[COLUMN] == @black[ROW])
   end
 end
+
+#Separalo en métodos
+

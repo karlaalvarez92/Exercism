@@ -3,7 +3,7 @@
 class BaseConverter
   def self.convert(input_base, digits, output_base)
     valid?(digits, input_base, output_base)
-    return to_decimal(input_base, digits) if output_base == 10
+    # return to_decimal(input_base, digits) if output_base == 10
     return [0] if digits.all?(&:zero?)
 
     converter(input_base, digits, output_base)

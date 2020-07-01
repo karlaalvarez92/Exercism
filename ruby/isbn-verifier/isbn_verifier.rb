@@ -11,10 +11,9 @@ class IsbnVerifier
   end
 
   def self.validate(array)
-    array = array.map(&:to_i)
     acc = 0
 
-    array.each_with_index do |number, index|
+    array.map(&:to_i).each_with_index do |number, index|
       acc += number * (index + 1)
     end
 

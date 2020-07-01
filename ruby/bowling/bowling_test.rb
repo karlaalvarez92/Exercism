@@ -6,7 +6,7 @@ require_relative 'bowling'
 # Common test data version: 1.2.0 1806718
 class BowlingTest < Minitest::Test
   def test_should_be_able_to_score_a_game_with_all_zeros
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -14,7 +14,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_should_be_able_to_score_a_game_with_no_strikes_or_spares
-    skip
+    # skip
     game = Game.new
     rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]
     rolls.each { |pins| game.roll(pins) }
@@ -22,7 +22,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_spare_followed_by_zeros_is_worth_ten_points
-    skip
+    # skip
     game = Game.new
     rolls = [6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -30,7 +30,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_points_scored_in_the_roll_after_a_spare_are_counted_twice
-    skip
+    # skip
     game = Game.new
     rolls = [6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -38,7 +38,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_consecutive_spares_each_get_a_one_roll_bonus
-    skip
+    # skip
     game = Game.new
     rolls = [5, 5, 3, 7, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -46,7 +46,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_spare_in_the_last_frame_gets_a_one_roll_bonus_that_is_counted_once
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 7]
     rolls.each { |pins| game.roll(pins) }
@@ -54,7 +54,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_strike_earns_ten_points_in_a_frame_with_a_single_roll
-    skip
+    # skip
     game = Game.new
     rolls = [10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -62,7 +62,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_points_scored_in_the_two_rolls_after_a_strike_are_counted_twice_as_a_bonus
-    skip
+    # skip
     game = Game.new
     rolls = [10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -70,7 +70,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_consecutive_strikes_each_get_the_two_roll_bonus
-    skip
+    # skip
     game = Game.new
     rolls = [10, 10, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
@@ -78,7 +78,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_strike_in_the_last_frame_gets_a_two_roll_bonus_that_is_counted_once
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 1]
     rolls.each { |pins| game.roll(pins) }
@@ -86,7 +86,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_rolling_a_spare_with_the_two_roll_bonus_does_not_get_a_bonus_roll
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 3]
     rolls.each { |pins| game.roll(pins) }
@@ -94,7 +94,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_strikes_with_the_two_roll_bonus_do_not_get_bonus_rolls
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]
     rolls.each { |pins| game.roll(pins) }
@@ -102,7 +102,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 10]
     rolls.each { |pins| game.roll(pins) }
@@ -110,7 +110,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_all_strikes_is_a_perfect_game
-    skip
+    # skip
     game = Game.new
     rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
     rolls.each { |pins| game.roll(pins) }
@@ -168,7 +168,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_two_bonus_rolls_after_a_strike_in_the_last_frame_can_score_more_than_10_points_if_one_is_a_strike
-    skip
+    # skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 6]
     rolls.each { |pins| game.roll(pins) }
@@ -266,7 +266,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_cannot_roll_after_bonus_rolls_for_strike
-    # skip
+    skip
     game = Game.new
     rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2]
     rolls.each { |pins| game.roll(pins) }

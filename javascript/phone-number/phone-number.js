@@ -8,11 +8,16 @@ export const clean = string => {
     LESS_THAN_TEN_NUMBERS= "Incorrect number of digits",
     ELEVEN_NUMBERS_MUST_START_WITH_ONE= "11 digits must start with 1",
     MORE_THAN_ELEVEN_NUMBERS = "More than 11 digits",
-    INCLUDE_LETTERS =
-     "Letters not permitted"
-
-
-    ELEVEN_NUMBERS_START_WITH_ZERO=
+    INCLUDE_LETTERS = "Letters not permitted",
+    INCLUDE_PUNCTUATION = "Punctuations not permitted",
+    AREA_CODE_START_WITH_ZERO= "Area code cannot start with zero",
+    AREA_CODE_START_WITH_ONE= "Area code cannot start with one",
+    EXCHANGE_CODE_START_WITH_ZERO= "Exchange code cannot start with zero",
+    EXCHANGE_CODE_START_WITH_ONE= "Exchange code cannot start with one"
+[{
+  check: funcion para comprobar,
+  message : mensaje que retorna,
+}]
 
 
 
